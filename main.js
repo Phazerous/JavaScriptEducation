@@ -1,27 +1,66 @@
-const developers = [
+// 1 \\
+
+const names = ['Mikhail', 'Ivan', 'Albert', 'John', 'Ian', 'Petr', 'Alexandr', 'Oleg', 'Jaroslav', 'Vsevolod'];
+
+const shortNames = names.filter(name => name.length <= 5);
+
+// 2 \\
+
+const products = [
     {
         id: 1,
-        fullName: 'Anton Petrov',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Git', 'React'],
-        salary: 1000,
+        name: 'Intro to JavaScript',
+        category: 'books',
+        price: 150,
     },
     {
         id: 2,
-        fullName: 'Ivan Ivanov',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Git', 'Vue'],
-        salary: 950,
+        name: 'Intro to CSS',
+        category: 'books',
+        price: 120,
     },
     {
         id: 3,
-        fullName: 'Albert Sidorov',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Git', 'jQuery'],
-        salary: 850,
+        name: 'Deep dive into JavaScript',
+        category: 'books',
+        price: 350,
+    },
+    {
+        id: 4,
+        name: 'Intro to PHP',
+        category: 'books',
+        price: 250,
+    },
+    {
+        id: 5,
+        name: 'Deep dive into PHP',
+        category: 'books',
+        price: 350,
     },
 ];
 
-const middleDevelopers = developers.map(dev => ({
-  id: dev.id,
-  fullName: dev.fullName,
-  skills: [...dev.skills + 'TypeScript'],
-  salary: dev.salary + 500,
-}))
+const cheapProducts = products.filter(product => product.price < 300);
+
+// 3 \\
+
+const developers = [
+    {
+        id: 1,
+        fullName: 'Ivan Ivanov',
+        skills: ['HTML', 'CSS', 'Git', 'Gulp', 'Pug']
+    },
+    {
+        id: 2,
+        fullName: 'Petr Petrov',
+        skills: ['HTML', 'CSS', 'Git', 'JavaScript', 'npm']
+    },
+    {
+        id: 3,
+        fullName: 'Ian Melnikov',
+        skills: ['HTML', 'CSS', 'Git', 'JavaScript', 'TypeScript']
+    }
+];
+
+const tsDevelopers = developers.filter(dev => dev.skills.includes('TypeScript'));
+
+console.log(tsDevelopers);
