@@ -49,3 +49,4 @@ players.sort((a, b) => sortByString(a.surname, b.surname));
 
 console.log(food);
 console.log(players);
+console.log("Hello")
