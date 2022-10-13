@@ -1,32 +1,30 @@
-const order = [
+const players = [
     {
         id: 1,
-        name: 'Лопата',
-        price: 1000,
-        quantity: 1,
+        name: 'Andres',
+        surname: 'Iniesta',
+        club: 'Vissel Cobe',
     },
     {
         id: 2,
-        name: 'Удочка',
-        price: 1200,
-        quantity: 2,
+        name: 'Eden',
+        surname: 'Hazard',
+        club: 'Real Madrid',
     },
     {
         id: 3,
-        name: 'Ведро',
-        price: 500,
-        quantity: 3,
+        name: 'Mo',
+        surname: 'Salah',
+        club: 'Liverpool',
     },
     {
         id: 4,
-        name: 'Мороженое',
-        price: 100,
-        quantity: 8,
+        name: 'Lionel',
+        surname: 'Messi',
+        club: 'Barcelona',
     },
 ];
 
-let totalPrice = order.reduce((acc, order) => {
-    return acc + order.quantity * order.price;
-}, 0)
+let messi = players.find(p => p.surname === 'Messi');
 
-console.log(totalPrice);
+console.log(messi);
