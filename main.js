@@ -1,30 +1,32 @@
-function censor() {
-    var changes = [];
+const order = [
+    {
+        id: 1,
+        name: 'Лопата',
+        price: 1000,
+        quantity: 1,
+    },
+    {
+        id: 2,
+        name: 'Удочка',
+        price: 1200,
+        quantity: 2,
+    },
+    {
+        id: 3,
+        name: 'Ведро',
+        price: 500,
+        quantity: 3,
+    },
+    {
+        id: 4,
+        name: 'Мороженое',
+        price: 100,
+        quantity: 8,
+    },
+];
 
-    return function(a, b = 0) {
-        if (b != 0) {
-            changes.push([a, b]);
-            return;
-        }
+let totalPrice = order.reduce((acc, order) => {
+    return acc + order.quantity * order.price;
+}, 0)
 
-        var result = a;
-
-        for (change of changes) {
-            if (a.includes(change[0])) {
-                result = result.replace(change[0], change[1]);
-            }
-        }
-
-        return result;
-    }
-
-
-}
-
-const changeScene = censor();
-
-changeScene('PHP','JS');
-
-changeScene('backend', 'frontend')
-
-console.log(changeScene('PHP is the most popular programming language for backend web-development'));
+console.log(totalPrice);
