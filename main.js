@@ -1,8 +1,26 @@
-function getInfo() {
-    return ['BMW', 'X3'];
+const link = {
+    href: '#',
+    title: 'simple link',
+    target: 'blank',
+    className: 'link',
+    id: null,
+    children: {
+        span: {
+            content: 'Click me',
+            className: 'anchor',
+        },
+    },
 }
 
-let [carName, carSeries] = [...getInfo()];
+const {
+    target,
+    className,
+    children: {
+        span: {
+            content,
+            className: renamed,
+        }
+    }
+} = link;
 
-console.log(carName);
-console.log(carSeries);
+console.log(target, className, content, renamed);
